@@ -35,22 +35,24 @@
             margin-top: -5px;
             margin-bottom: 20px;
         }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 6px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Polityka Prywatności aplikacji Architekt Majątku</h1>
-        <p class="update-date">Ostatnia aktualizacja: 25 marca 2026</p>
+        <p class="update-date">Ostatnia aktualizacja: 4 kwietnia 2026</p>
 
         <h2>1. Wstęp</h2>
         <p>Twoja prywatność to nasz absolutny priorytet. Aplikacja "Architekt Majątku" została zaprojektowana tak, aby maksymalnie chronić Twoje dane finansowe. Ta polityka wyjaśnia, jakich informacji używamy i dlaczego.</p>
 
         <h2>2. Twoje dane finansowe (Tryb Lokalny)</h2>
-        <p>Domyślnie wszystkie dane wprowadzane do aplikacji (wydatki, dochody, kredyty, oszczędności) są zapisywane wyłącznie w pamięci Twojego urządzenia. Nie mamy do nich dostępu, nie przechowujemy ich na naszych serwerach i nie udostępniamy ich podmiotom trzecim. Jesteś jedynym właścicielem swoich danych.</p>
+        <p>Domyślnie wszystkie dane wprowadzane do aplikacji (wydatki, dochody, kredyty, oszczędności, opłaty stałe, inwestycje, nieruchomości, metale szlachetne) są zapisywane wyłącznie w pamięci Twojego urządzenia. Nie mamy do nich dostępu, nie przechowujemy ich na naszych serwerach i nie udostępniamy ich podmiotom trzecim. Jesteś jedynym właścicielem swoich danych.</p>
 
         <h2>3. Tryb Pary (Synchronizacja w chmurze)</h2>
-        <p>Jeśli zdecydujesz się na włączenie "Trybu Pary", aplikacja wykorzysta bazę danych Google Firebase Firestore (serwery zlokalizowane w Europie — Warszawa) w celu synchronizacji informacji między Tobą a Twoim partnerem w czasie rzeczywistym.</p>
-        <p>Synchronizowane dane obejmują: wydatki, kategorie, kwoty, daty transakcji oraz imiona partnerów. Dane są powiązane z losowym, 6-znakowym kodem pokoju — nie z Twoim kontem, adresem e-mail ani numerem telefonu.</p>
+        <p>Jeśli zdecydujesz się na włączenie "Trybu Pary", aplikacja wykorzysta bazę danych Google Firebase Firestore (serwery zlokalizowane w Europie) w celu synchronizacji informacji między Tobą a Twoim partnerem w czasie rzeczywistym.</p>
+        <p>Synchronizowane dane obejmują: wydatki, kategorie, kwoty, daty transakcji, opłaty stałe, kredyty, aktywa oraz imiona partnerów. Dane są powiązane z losowym kodem pokoju — nie z Twoim kontem, adresem e-mail ani numerem telefonu.</p>
         <p>Nigdy nie analizujemy ani nie sprzedajemy tych danych. Możesz w każdej chwili rozłączyć parę w ustawieniach aplikacji.</p>
 
         <h2>4. Dostęp do aparatu (Kamera)</h2>
@@ -61,30 +63,76 @@
         </ul>
         <p>Poza tymi dwoma funkcjami obraz z kamery nie jest nigdzie wysyłany ani zapisywany.</p>
 
-        <h2>5. Skanowanie paragonów (AI)</h2>
+        <h2>5. Dostęp do galerii zdjęć</h2>
+        <p>Aplikacja może poprosić o dostęp do galerii zdjęć w celu wczytania zdjęcia paragonu do skanera AI. Zdjęcia nie są nigdzie przesyłane poza analizą AI opisaną w sekcji 6. Aplikacja nie przegląda, nie kopiuje ani nie modyfikuje innych zdjęć w galerii.</p>
+
+        <h2>6. Skanowanie paragonów (AI)</h2>
         <p>Aplikacja oferuje funkcję inteligentnego skanowania paragonów. Zdjęcie paragonu jest przesyłane do zewnętrznego serwisu AI (Google Gemini API) przez szyfrowane połączenie HTTPS wyłącznie w celu rozpoznania pozycji zakupowych.</p>
         <p>Przesyłany jest sam obraz paragonu — bez żadnych danych osobowych, danych konta ani historii finansowej. Wynik analizy jest przetwarzany lokalnie na Twoim urządzeniu. Zdjęcia paragonów nie są przechowywane na żadnych serwerach — ani naszych, ani Google.</p>
+        <p>Aplikacja może automatycznie rozpoznać, że zeskanowany rachunek odpowiada opłacie stałej (np. prąd, woda) i zaproponować powiązanie z istniejącym zobowiązaniem. Decyzja należy do użytkownika.</p>
 
-        <h2>6. Zabezpieczenia biometryczne (FaceID / TouchID)</h2>
-        <p>Aplikacja oferuje możliwość zablokowania dostępu za pomocą wbudowanych systemów biometrycznych Twojego telefonu (FaceID, TouchID lub PIN). Cały proces weryfikacji odbywa się na poziomie systemu operacyjnego (iOS/Android). Nasza aplikacja otrzymuje jedynie potwierdzenie, czy weryfikacja przebiegła pomyślnie. Nie zbieramy, nie przechowujemy i nie mamy dostępu do Twoich danych biometrycznych (skanów twarzy czy odcisków palców).</p>
+        <h2>7. Zabezpieczenia biometryczne (FaceID / TouchID)</h2>
+        <p>Aplikacja oferuje możliwość zablokowania dostępu za pomocą wbudowanych systemów biometrycznych Twojego telefonu (FaceID, TouchID lub PIN). Cały proces weryfikacji odbywa się na poziomie systemu operacyjnego (iOS/Android). Nasza aplikacja otrzymuje jedynie potwierdzenie, czy weryfikacja przebiegła pomyślnie. Nie zbieramy, nie przechowujemy i nie mamy dostępu do Twoich danych biometrycznych.</p>
 
-        <h2>7. Dane rynkowe (Ceny akcji i kryptowalut)</h2>
-        <p>Aplikacja pobiera publiczne dane o cenach instrumentów finansowych z serwisów zewnętrznych (Binance, Yahoo Finance, CoinGecko) wyłącznie w celu wyświetlenia aktualnych wycen w Twoim portfelu. Podczas tych zapytań nie przesyłamy żadnych Twoich danych osobowych ani finansowych. Wysyłany jest wyłącznie symbol instrumentu (np. "BTC" lub "AAPL").</p>
+        <h2>8. Dane rynkowe</h2>
+        <p>Aplikacja pobiera publiczne dane o cenach instrumentów finansowych z serwisów zewnętrznych wyłącznie w celu wyświetlenia aktualnych wycen w Twoim portfelu:</p>
+        <ul>
+            <li><strong>Kryptowaluty</strong> — ceny z Binance i CoinGecko</li>
+            <li><strong>Akcje i ETF</strong> — ceny z Yahoo Finance</li>
+            <li><strong>Metale szlachetne</strong> — cena złota z Narodowego Banku Polskiego (NBP), ceny srebra, platyny, palladu i miedzi z Yahoo Finance (kontrakty terminowe)</li>
+            <li><strong>Waluty obce</strong> — kursy z Narodowego Banku Polskiego (NBP)</li>
+            <li><strong>Nieruchomości</strong> — mediany cen za m² lokali mieszkalnych z Głównego Urzędu Statystycznego (GUS), Bank Danych Lokalnych, dla 380 powiatów w Polsce</li>
+        </ul>
+        <p>Podczas tych zapytań nie przesyłamy żadnych Twoich danych osobowych ani finansowych. Wysyłany jest wyłącznie symbol instrumentu (np. "BTC", "AAPL") lub identyfikator jednostki terytorialnej. Dane są cache'owane lokalnie na urządzeniu w celu ograniczenia zapytań sieciowych.</p>
 
-        <h2>8. Komentarze AI Mentora</h2>
-        <p>Funkcja "Czy mnie na to stać?" wykorzystuje Google Gemini API do generowania krótkich komentarzy motywacyjnych. Do serwisu AI przesyłane są wyłącznie zanonimizowane dane liczbowe (kwota zakupu, saldo, zobowiązania) oraz imię użytkownika. Nie przesyłamy historii transakcji, danych konta bankowego ani innych danych wrażliwych.</p>
+        <h2>9. AI Mentor</h2>
+        <p>Funkcja AI Mentora wykorzystuje Google Gemini API do generowania spersonalizowanych komentarzy motywacyjnych. Do serwisu AI przesyłane są wyłącznie zanonimizowane dane liczbowe:</p>
+        <ul>
+            <li>Kwoty: saldo, wydatki, oszczędności, zobowiązania</li>
+            <li>Imię użytkownika (do personalnej formy zwracania się)</li>
+            <li>Informacje o zaplanowanych opłatach (kwoty i terminy)</li>
+        </ul>
+        <p>Nie przesyłamy historii transakcji, nazw sklepów, danych konta bankowego ani innych danych wrażliwych. AI Mentor nie ma dostępu do pełnej historii — otrzymuje jedynie zagregowane statystyki bieżącego cyklu.</p>
 
-        <h2>9. Reklamy i analityka</h2>
-        <p>Aplikacja nie wyświetla reklam, nie korzysta z narzędzi analitycznych podmiotów trzecich i nie tworzy profili użytkowników. Nie zbieramy żadnych danych w celach marketingowych.</p>
+        <h2>10. Powiadomienia push</h2>
+        <p>Aplikacja może wysyłać lokalne powiadomienia push dotyczące nadchodzących płatności, przypomnienia o opłatach stałych i zaplanowanych zobowiązaniach. Wszystkie powiadomienia są generowane i planowane lokalnie na urządzeniu — nie korzystamy z żadnych zewnętrznych serwisów powiadomień. Możesz w dowolnym momencie wyłączyć powiadomienia w ustawieniach aplikacji.</p>
 
-        <h2>10. Dzieci</h2>
+        <h2>11. System gamifikacji (Twoja Ranga)</h2>
+        <p>Aplikacja zawiera system punktów doświadczenia (XP) i poziomów, który motywuje do regularnego korzystania z aplikacji i dobrych nawyków finansowych. Dane gamifikacji (punkty, seria, historia zdarzeń) są przechowywane wyłącznie lokalnie na urządzeniu. Nie porównujemy wyników między użytkownikami i nie prowadzimy żadnych rankingów.</p>
+
+        <h2>12. Subskrypcje i płatności</h2>
+        <p>Aplikacja oferuje płatne subskrypcje (Pro i Ultimate) obsługiwane przez Apple App Store i Google Play Store. Płatności są przetwarzane wyłącznie przez platformy Apple/Google — nie mamy dostępu do danych Twojej karty płatniczej, konta bankowego ani historii płatności.</p>
+        <p>Do zarządzania subskrypcjami wykorzystujemy serwis RevenueCat, który otrzymuje wyłącznie anonimowy identyfikator urządzenia i status subskrypcji. RevenueCat nie ma dostępu do Twoich danych finansowych przechowywanych w aplikacji.</p>
+        <p>Okres próbny (trial) jest śledzony za pomocą anonimowej autoryzacji Firebase, aby zapobiec wielokrotnemu wykorzystaniu darmowego okresu testowego.</p>
+
+        <h2>13. Eksport danych</h2>
+        <p>Aplikacja umożliwia eksport danych w formacie CSV/PDF. Eksportowany plik jest generowany lokalnie na urządzeniu i udostępniany za pomocą systemowego menu udostępniania (e-mail, AirDrop, chmura). Nie mamy wglądu w eksportowane dane ani w to, komu je udostępniasz.</p>
+
+        <h2>14. Reklamy i analityka</h2>
+        <p>Aplikacja nie wyświetla reklam, nie korzysta z narzędzi analitycznych podmiotów trzecich (Google Analytics, Facebook SDK, itp.) i nie tworzy profili użytkowników. Nie zbieramy żadnych danych w celach marketingowych. Nie stosujemy pikseli śledzących ani fingerprinting urządzenia.</p>
+
+        <h2>15. Przechowywanie i bezpieczeństwo danych</h2>
+        <p>Dane przechowywane lokalnie korzystają z wbudowanych mechanizmów szyfrowania systemu operacyjnego (iOS Keychain / Android Keystore). W przypadku trybu pary, dane w Firebase Firestore są szyfrowane w spoczynku (encryption at rest) i podczas transmisji (encryption in transit — TLS 1.3).</p>
+
+        <h2>16. Twoje prawa</h2>
+        <p>Zgodnie z RODO (GDPR) masz prawo do:</p>
+        <ul>
+            <li>Dostępu do swoich danych — wszystkie dane są widoczne bezpośrednio w aplikacji</li>
+            <li>Eksportu danych — funkcja eksportu CSV/PDF</li>
+            <li>Usunięcia danych — funkcja "Wyczyść wszystkie dane" w Ustawieniach</li>
+            <li>Wycofania zgody — możesz w dowolnym momencie wyłączyć synchronizację, powiadomienia lub odinstalować aplikację</li>
+        </ul>
+
+        <h2>17. Dzieci</h2>
         <p>Aplikacja nie jest skierowana do osób poniżej 16 roku życia. Nie zbieramy świadomie danych od dzieci.</p>
 
-        <h2>11. Zmiany w polityce prywatności</h2>
-        <p>O wszelkich zmianach w niniejszej polityce poinformujemy poprzez aktualizację w aplikacji. Zachęcamy do okresowego przeglądania tego dokumentu.</p>
+        <h2>18. Zmiany w polityce prywatności</h2>
+        <p>O wszelkich istotnych zmianach w niniejszej polityce poinformujemy poprzez aktualizację w aplikacji. Zachęcamy do okresowego przeglądania tego dokumentu.</p>
 
-        <h2>12. Kontakt</h2>
-        <p>Jeśli masz pytania dotyczące swoich danych, skontaktuj się z nami pod adresem: <strong>architektmajatku@gmail.com</strong></p>
+        <h2>19. Kontakt</h2>
+        <p>Jeśli masz pytania dotyczące swoich danych lub niniejszej polityki prywatności, skontaktuj się z nami:</p>
+        <p><strong>E-mail:</strong> architektmajatku@gmail.com</p>
+        <p><strong>Strona:</strong> https://architektmajatku.pl</p>
     </div>
 </body>
 </html>
