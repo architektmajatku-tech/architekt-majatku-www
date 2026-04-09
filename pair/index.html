@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dołącz do wspólnego portfela — Architekt Majątku</title>
+    <meta name="theme-color" content="#0f1b2d">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(170deg, #080e18 0%, #0f1b2d 40%, #111d30 100%);
+            color: #d1d5db; min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .card {
+            background: #1a2940; border-radius: 24px; padding: 40px 32px;
+            max-width: 400px; width: 90%; text-align: center;
+            border: 2px solid #e2c27d44;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .logo { font-size: 48px; margin-bottom: 16px; }
+        .brand {
+            font-size: 14px; font-weight: 900; letter-spacing: 5px;
+            color: #e2c27d; margin-bottom: 8px;
+        }
+        h1 { font-size: 24px; font-weight: 900; color: #fff; margin-bottom: 8px; }
+        .subtitle { font-size: 14px; color: #9ca3af; margin-bottom: 24px; line-height: 1.5; }
+        .code-box {
+            background: #0f1b2d; border: 2px solid #e2c27d; border-radius: 16px;
+            padding: 16px; margin-bottom: 24px;
+        }
+        .code-label { font-size: 11px; color: #6b7280; letter-spacing: 3px; margin-bottom: 6px; }
+        .code-value {
+            font-size: 36px; font-weight: 900; letter-spacing: 8px; color: #e2c27d;
+            font-family: monospace;
+        }
+        .code-hint { font-size: 11px; color: #6b7280; margin-top: 8px; }
+        .host-name { font-size: 13px; color: #4ade80; font-weight: 700; margin-bottom: 20px; }
+        .btn {
+            display: block; width: 100%; padding: 16px; border-radius: 14px;
+            font-size: 16px; font-weight: 800; text-decoration: none;
+            margin-bottom: 10px; transition: transform 0.2s;
+        }
+        .btn:active { transform: scale(0.97); }
+        .btn-ios {
+            background: linear-gradient(135deg, #e2c27d, #d4a94e); color: #0f1b2d;
+        }
+        .btn-android {
+            background: #4ade8022; border: 2px solid #4ade8044; color: #4ade80;
+        }
+        .btn-open {
+            background: #e2c27d22; border: 2px solid #e2c27d44; color: #e2c27d;
+        }
+        .divider {
+            height: 1px; background: #2d3f59; margin: 20px 0;
+        }
+        .steps { text-align: left; margin-bottom: 20px; }
+        .step {
+            display: flex; align-items: flex-start; gap: 10px;
+            margin-bottom: 12px; font-size: 13px; color: #9ca3af; line-height: 1.4;
+        }
+        .step-num {
+            min-width: 24px; height: 24px; background: #e2c27d22;
+            border-radius: 12px; display: flex; align-items: center;
+            justify-content: center; font-size: 12px; font-weight: 800; color: #e2c27d;
+        }
+        .footer { font-size: 11px; color: #4b5563; margin-top: 16px; }
+    </style>
+    <script>
+        function getRoomCode() {
+            const path = window.location.pathname.split('/').filter(Boolean);
+            if (path.length >= 2 && path[0] === 'pair' && /^[A-Z0-9]{6}$/.test(path[1])) return path[1];
+            const params = new URLSearchParams(window.location.search);
+            return params.get('code') || '';
+        }
+
+        function getHostName() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('host') || '';
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            const code = getRoomCode();
+            const host = getHostName();
+            if (code) {
+                document.getElementById('code-value').textContent = code;
+                document.getElementById('code-box').style.display = 'block';
+            }
+            if (host) {
+                document.getElementById('host-name').textContent = host + ' zaprasza Cię do wspólnego portfela';
+                document.getElementById('host-name').style.display = 'block';
+            }
+
+            const deepLink = 'architektmajatku://pair/' + code;
+            document.getElementById('btn-open').href = deepLink;
+
+            if (/iPhone|iPad|Android/i.test(navigator.userAgent) && code) {
+                setTimeout(function() { window.location.href = deepLink; }, 500);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">👫</div>
+        <div class="brand">ARCHITEKT MAJĄTKU</div>
+        <h1>Wspólny portfel</h1>
+        <p class="subtitle">Zarządzajcie budżetem razem — w czasie rzeczywistym, z jednej aplikacji.</p>
+
+        <div class="host-name" id="host-name" style="display:none;"></div>
+
+        <div class="code-box" id="code-box" style="display:none;">
+            <div class="code-label">KOD PAROWANIA</div>
+            <div class="code-value" id="code-value"></div>
+            <div class="code-hint">Wpisz ten kod w aplikacji po instalacji</div>
+        </div>
+
+        <a href="#" id="btn-open" class="btn btn-open">Otwórz w aplikacji</a>
+
+        <div class="divider"></div>
+
+        <p style="font-size:13px;color:#9ca3af;margin-bottom:16px;">Nie masz aplikacji? Pobierz za darmo:</p>
+
+        <a href="https://apps.apple.com/app/architekt-majatku/id6761601069" class="btn btn-ios">
+            Pobierz na App Store
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.architektmajatku.app" class="btn btn-android">
+            Pobierz na Google Play
+        </a>
+
+        <div class="divider"></div>
+
+        <div class="steps">
+            <div class="step"><div class="step-num">1</div><div>Pobierz aplikację Architekt Majątku</div></div>
+            <div class="step"><div class="step-num">2</div><div>Wybierz tryb "Para" i wpisz kod parowania</div></div>
+            <div class="step"><div class="step-num">3</div><div>Gotowe! Wspólny budżet zsynchronizowany</div></div>
+        </div>
+
+        <div class="footer">
+            architektmajatku.pl · Zero reklam · Twoje dane na Twoim telefonie
+        </div>
+    </div>
+</body>
+</html>
