@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parowanie — Architekt Majątku</title>
+  <script>
+    // Github Pages 404 fallback — wyciągnij kod parowania z URL i przekieruj
+    (function() {
+      var path = window.location.pathname;
+      var match = path.match(/\/pair\/([A-Z0-9]{6})/i);
+      if (match) {
+        // Znaleziony kod parowania → przekieruj na pair/index.html z kodem w hash
+        var code = match[1].toUpperCase();
+        window.location.replace('/pair/?code=' + code + '#' + code);
+      }
+      // Brak kodu — zostaje zwykła strona 404 (poniżej)
+    })();
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #0f1b2d; color: #fff; padding: 60px 20px; text-align: center; margin: 0; }
+    h1 { color: #e2c27d; font-size: 28px; margin-bottom: 12px; }
+    p { color: #9ca3af; font-size: 16px; line-height: 24px; }
+    a { color: #e2c27d; text-decoration: none; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>404 — Strona nie istnieje</h1>
+  <p>Sprawdź adres URL.</p>
+  <p style="margin-top: 24px;"><a href="/">← Wróć na stronę główną</a></p>
+</body>
+</html>
